@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Client</h2>
+
+<form action="." method="post">
+ 
+  {% csrf_token %}
+  <div class="container">
+
+    <label for="psw"><b>ID</b></label>
+    <input type="text" placeholder="Enter ID" minlength="9" maxlength="9" name="did" required>
+
+    <label for="uname"><b>name</b></label>
+    <input type="text" placeholder="Enter Username" minlength="6" maxlength="80" name="name" required>
+
+    <label for="uname"><b>age</b></label>
+    <input type="text" placeholder="Enter you'r Age" maxlength="3" name="age" required>
+
+    <label for="uname"><b>gender</b></label>
+    <input type="text" placeholder="Male/Female" maxlength="6" name="gender" required>
+
+    <label for="uname"><b>WBC</b></label>
+    <input type="text" placeholder="Enter white blood cells number" maxlength="5" name="WBC" required>
+
+    <label for="uname"><b>Neut</b></label>
+    <input type="text" placeholder="Enter The persentage of the Neut" maxlength="2" name="Neut" required>  
+
+    <label for="uname"><b>Lymph</b></label>
+    <input type="text" placeholder="Enter protictive white blood cells persentage" maxlength="2" name="Lymph" required>
+
+    <label for="uname"><b>RBC</b></label>
+    <input type="text" placeholder="Enter the Red Blood Cells" maxlength="5" name="RBC" required>
+
+    <label for="uname"><b>HCT</b></label>
+    <input type="text" placeholder="Enter The HCT" maxlength="3" name="HCT" required>
+
+    <label for="uname"><b>Urea</b></label>
+    <input type="text" placeholder="Enter the Urea" maxlength="3" name="Urea" required>
+
+    <label for="uname"><b>HB</b></label>
+    <input type="text" placeholder="Enter HB" maxlength="5" name="HB" required>
+
+    <label for="uname"><b>Creatinine</b></label>
+    <input type="text" placeholder="Enter Creatinine" maxlength="5" name="Creatinine" required>
+
+    <label for="uname"><b>Iron</b></label>
+    <input type="text" placeholder="Enter iron" maxlength="5" name="Iron" required>
+
+    <label for="uname"><b>HDL</b></label>
+    <input type="text" placeholder="Enter HDL" maxlength="5" name="HDL" required>
+
+
+    <label for="uname"><b>Do you have headache ?</b></label>
+    <input type="text" placeholder="yes/no" minlength="2" maxlength="3" name="q1" required>
+
+    
+    <label for="uname"><b>Do you have a fever ?</b></label>
+    <input type="text" placeholder="yes/no" minlength="2" maxlength="3" name="q2" required>
+
+    <label for="uname"><b>Do you feel dizzy ?</b></label>
+    <input type="text" placeholder="yes/no" minlength="2" maxlength="3" name="q3" required>
+
+    <label for="uname"><b>Condition</b></label>
+    <textarea  rows="4"   name="condition" required >Client's condition</textarea >
+        
+    <button type="submit">Submit</button>
+
+    <a style="float: right;" href="{% url 'list' %}">All Clients</a>
+
+  </div>
+
+</form>
+
+</body>
+</html>

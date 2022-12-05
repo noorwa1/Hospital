@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<table id="customers">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>age</th>
+    <th>gender</th>
+    <th>WBC</th>
+    <th>Neut</th>
+    <th>Lymph</th>
+    <th>RBC</th>
+    <th>HCT</th>
+    <th>Urea</th>
+    <th>HB</th>
+    <th>Creatinine</th>
+    <th>Iron</th>
+    <th>HDL</th>
+    <th>headace</th>
+    <th>fever</th>
+    <th>dizzy</th>
+    <th>Condition</th>
+  </tr>
+
+  {% for c in clients %}
+
+  <tr>
+    <td>{{c.did}}</td>
+    <td>{{c.name}}</td>
+    <td>{{c.age}}</td>
+    <td>{{c.gender}}</td>
+    <td>{{c.WBC}}</td>
+    <td>{{c.Neut}}</td>
+    <td>{{c.Lymph}}</td>
+    <td>{{c.RBC}}</td>
+    <td>{{c.HCT}}</td>
+    <td>{{c.Urea}}</td>
+    <td>{{c.HB}}</td>
+    <td>{{c.Creatinine}}</td>
+    <td>{{c.Iron}}</td>
+    <td>{{c.HDL}}</td>
+    <td>{{c.q1}}</td>
+    <td>{{c.q2}}</td>
+    <td>{{c.q3}}</td>
+    <td>{{c.condition}}</td>
+  </tr>
+
+  {% endfor %}
+  
+</table>
+
+</body>
+</html>
